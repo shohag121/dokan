@@ -87,7 +87,12 @@ const cache = setupCache({
 
 // Create `axios` instance passing the newly created `cache.adapter`
 const api = axios.create({
-    adapter: cache.adapter
+    adapter: cache.adapter,
+    headers: {
+        common: {
+            'Content-Type': 'text/plain'
+        },
+    }
 });
 
 export default {
